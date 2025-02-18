@@ -1,6 +1,3 @@
-import Link from 'next/link'
-
-import menuData from '../Header/menuData'
 import Logo from '../Logo'
 import Social from '../Social'
 

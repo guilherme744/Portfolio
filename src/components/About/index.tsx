@@ -1,7 +1,4 @@
 
-import { aboutData } from './aboutData'
-
-
 export default function AboutMe() {
     return <div>
         {/* <div className="grid grid-cols-4 pt-5 max-lg:grid-cols-1">

@@ -1,4 +1,3 @@
-import AboutMe from '@/components/About'
 import Banner from '@/components/Banner'
 import { ContactForm } from '@/components/ContactForm'
 import Layout from '@/components/Layout'
