@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Image from 'next/image'
 
 import AboutMe from '@/components/About'
 import Layout from '@/components/Layout'
