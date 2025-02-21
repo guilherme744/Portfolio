@@ -6,12 +6,12 @@ export const getAllPosts = async () => {
     )
 
     if (!res.ok) {
-        throw new Error(`Failed to fetch posts: ${res.status} ${res.statusText}`);
+        throw new Error(`Failed to fetch posts: ${res.status} ${res.statusText}`)
     }
 
-    const contentType = res.headers.get('content-type');
+    const contentType = res.headers.get('content-type')
     if (!contentType || !contentType.includes('application/json')) {
-        throw new Error(`Invalid response format: Expected JSON but received ${contentType}`);
+        throw new Error(`Invalid response format: Expected JSON but received ${contentType}`)
     }
 
     const posts = await res.json()
@@ -24,12 +24,12 @@ export const getPosts = async (id: string) => {
     )
 
     if (!res.ok) {
-        throw new Error(`Failed to fetch posts: ${res.status} ${res.statusText}`);
+        throw new Error(`Failed to fetch posts: ${res.status} ${res.statusText}`)
     }
 
-    const contentType = res.headers.get('content-type');
+    const contentType = res.headers.get('content-type')
     if (!contentType || !contentType.includes('application/json')) {
-        throw new Error(`Invalid response format: Expected JSON but received ${contentType}`);
+        throw new Error(`Invalid response format: Expected JSON but received ${contentType}`)
     }
     
     const post = await res.json()
