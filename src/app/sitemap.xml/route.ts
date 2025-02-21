@@ -73,7 +73,7 @@ function generateSiteMap(posts: BlogPost[]) {
       <changefreq>yearly</changefreq>
       <priority>0.5</priority>
     </url>
-     ${posts.map(({ slug,date }) => {
+     ${posts && posts.length > 0 ? posts.map(({ slug,date }) => {
         return `
            <url>
                 <loc>${`${URL}/blog/${slug}`}</loc>
@@ -82,7 +82,7 @@ function generateSiteMap(posts: BlogPost[]) {
                 <priority>0.5</priority>
            </url>
          `
-    }).join('')}
+    }).join(''): ''}
    </urlset>
  `
 }
