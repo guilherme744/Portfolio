@@ -88,14 +88,18 @@ function generateSiteMap(posts: BlogPost[]) {
 }
 
 export async function GET() {
-    const posts = await getAllPosts()
-    const body = generateSiteMap(posts)
-
-    return new Response(body, {
-        status: 200,
-        headers: {
-            'Cache-control': 'public, s-maxage=86400, stale-while-revalidate',
-            'content-type': 'application/xml',
-        },
-    })
+  try {
+      const posts = await getAllPosts()
+      const body = generateSiteMap(posts)
+      return new Response(body, {
+          status: 200,
+          headers: {
+              'Cache-control': 'public, s-maxage=86400, stale-while-revalidate',
+              'content-type': 'application/xml',
+          },
+      })
+  } catch (error) {
+      console.error("Error fetching posts:", error)
+      return new Response("Failed to generate sitemap", { status: 500 })
+  }
 }
